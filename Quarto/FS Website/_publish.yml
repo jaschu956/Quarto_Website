@@ -1,0 +1,6 @@
+- source: project
+  quarto-pub:
+    - id: 0fcc5bea-5d63-4ab7-8c6e-a67e05b29031
+      url: 'https://jaschu.quarto.pub/welcome-to-farm-store---dmc'
+    - id: 9fe7d114-38eb-46d7-9ec9-1b8b9a9ae113
+      url: 'https://jaschu.quarto.pub/welcome-to-farm-store-dmc'

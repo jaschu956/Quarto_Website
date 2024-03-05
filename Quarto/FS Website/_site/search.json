@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Farm Store and Penguins",
+    "section": "",
+    "text": "CPP Farm store has a selected assortment of cool fruits and vegetables right from its on-campus farm.\n\n\nIllustration of Multiple columns on a website\n\n\n\n\n\n\nFigure 1: A sample of gift-pack prepared from CPP Grown produce\n\n\n\n\n\n\n\nFigure 2: A sample of wine made from grapes grown right here on campus\n\n\n\n\n\n\n\nGreat gift for your loved ones. These fruits were raised by students in agriculture majors on CPP campus, processed and packed by student employees at Farm Store.\n\nFantastic wine produced right here CPP campus by students!\n\n\n\n\n\nuse panel-tabset to add multiple tabs to your website.\n\nFruit gift packsRose Wine\n\n\n\n\n\nA sample of gift pack prepared from CPP Grown produce\n\n\n\n\n\n\n\nA sample of wine made from grapes grown right here on campus\n\n\n\n\n\nFor a beautiful graphic of fruit gift pack, see Figure 1."
+  },
+  {
+    "objectID": "index.html#featured-products",
+    "href": "index.html#featured-products",
+    "title": "Farm Store and Penguins",
+    "section": "",
+    "text": "Illustration of Multiple columns on a website\n\n\n\n\n\n\nFigure 1: A sample of gift-pack prepared from CPP Grown produce\n\n\n\n\n\n\n\nFigure 2: A sample of wine made from grapes grown right here on campus\n\n\n\n\n\n\n\nGreat gift for your loved ones. These fruits were raised by students in agriculture majors on CPP campus, processed and packed by student employees at Farm Store.\n\nFantastic wine produced right here CPP campus by students!"
+  },
+  {
+    "objectID": "index.html#web-site-menu",
+    "href": "index.html#web-site-menu",
+    "title": "Farm Store and Penguins",
+    "section": "",
+    "text": "use panel-tabset to add multiple tabs to your website.\n\nFruit gift packsRose Wine\n\n\n\n\n\nA sample of gift pack prepared from CPP Grown produce\n\n\n\n\n\n\n\nA sample of wine made from grapes grown right here on campus\n\n\n\n\n\nFor a beautiful graphic of fruit gift pack, see Figure 1."
+  },
+  {
+    "objectID": "index.html#chossing-data",
+    "href": "index.html#chossing-data",
+    "title": "Farm Store and Penguins",
+    "section": "2.1 Chossing Data",
+    "text": "2.1 Chossing Data\n\nPenguins are very cute!\n\n… so let’s work with penguin data today.\n\n\n\n\n\n\nNote\n\n\n\nFor this analysis we will use the penguins dataset from the palmerpenguinspackage(Gorman, Williams, and Fraser 2014).\n\n\n\n\n\n\n\n\nExpand to learn more about where the data was collected\n\n\n\n\n\nData were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network."
+  },
+  {
+    "objectID": "index.html#loading-packages-and-reading-data",
+    "href": "index.html#loading-packages-and-reading-data",
+    "title": "Farm Store and Penguins",
+    "section": "2.2 Loading packages and reading data",
+    "text": "2.2 Loading packages and reading data\n\n\n\n\n\n\nUsing the data without downloading it\n\n\n\nThis same dataset is also available in the palmerpenguins package\n\n\n\n\nCode\nlibrary(tidyverse)\nlibrary(ggthemes)\nlibrary(palmerpenguins)\nlibrary(gt)"
+  },
+  {
+    "objectID": "index.html#reading-data",
+    "href": "index.html#reading-data",
+    "title": "Farm Store and Penguins",
+    "section": "2.3 Reading Data",
+    "text": "2.3 Reading Data\n\n\nCode\nhead(penguins)\n\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "index.html#cleaning-data",
+    "href": "index.html#cleaning-data",
+    "title": "Farm Store and Penguins",
+    "section": "2.4 Cleaning Data",
+    "text": "2.4 Cleaning Data\n\n\nCode\nglimpse(penguins)\n\n\nRows: 344\nColumns: 8\n$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…\n$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…\n\n\nCode\npenguins |&gt;\n  drop_na() -&gt; penguins_no_na\n\npenguins_no_na\n\n\n# A tibble: 333 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           36.7          19.3               193        3450\n 5 Adelie  Torgersen           39.3          20.6               190        3650\n 6 Adelie  Torgersen           38.9          17.8               181        3625\n 7 Adelie  Torgersen           39.2          19.6               195        4675\n 8 Adelie  Torgersen           41.1          17.6               182        3200\n 9 Adelie  Torgersen           38.6          21.2               191        3800\n10 Adelie  Torgersen           34.6          21.1               198        4400\n# ℹ 323 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\nWe have removed missing values here, which means that the data has now 333 rows. Note that previously there were 344 rows in the original data.1"
+  },
+  {
+    "objectID": "index.html#code-annotation",
+    "href": "index.html#code-annotation",
+    "title": "Farm Store and Penguins",
+    "section": "2.5 Code Annotation",
+    "text": "2.5 Code Annotation\n\n\nCode\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n1penguins |&gt;\n2  mutate(\n    bill_ratio = bill_depth_mm / bill_length_mm,\n    bill_area  = bill_depth_mm * bill_length_mm\n  )\n\n\n\n1\n\nTake penguins, and then,\n\n2\n\nadd new columns for the bill ratio and bill area.\n\n\n\n\n# A tibble: 344 × 10\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 4 more variables: sex &lt;fct&gt;, year &lt;int&gt;, bill_ratio &lt;dbl&gt;, bill_area &lt;dbl&gt;"
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Farm Store and Penguins",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nNote that this removes any rows with missing values!↩︎"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index test.html",
+    "href": "index test.html",
+    "title": "Farm Store and Penguins",
+    "section": "",
+    "text": "CPP Farm store has a selected assortment of cool fruits and vegetables right from its on-campus farm.\n\n\nIllustration of Multiple columns on a website\n\n\n\n\n\n\nFigure 1: A sample of gift-pack prepared from CPP Grown produce\n\n\n\n\n\n\n\nFigure 2: A sample of wine made from grapes grown right here on campus\n\n\n\n\n\n\n\nGreat gift for your loved ones. These fruits were raised by students in agriculture majors on CPP campus, processed and packed by student employees at Farm Store.\n\nFantastic wine produced right here CPP campus by students!\n\n\n\n\n\nuse panel-tabset to add multiple tabs to your website.\n\nFruit gift packsRose Wine\n\n\n\n\n\nA sample of gift pack prepared from CPP Grown produce\n\n\n\n\n\n\n\nA sample of wine made from grapes grown right here on campus\n\n\n\n\n\nFor a beautiful graphic of fruit gift pack, see Figure 1."
+  },
+  {
+    "objectID": "index test.html#featured-products",
+    "href": "index test.html#featured-products",
+    "title": "Farm Store and Penguins",
+    "section": "",
+    "text": "Illustration of Multiple columns on a website\n\n\n\n\n\n\nFigure 1: A sample of gift-pack prepared from CPP Grown produce\n\n\n\n\n\n\n\nFigure 2: A sample of wine made from grapes grown right here on campus\n\n\n\n\n\n\n\nGreat gift for your loved ones. These fruits were raised by students in agriculture majors on CPP campus, processed and packed by student employees at Farm Store.\n\nFantastic wine produced right here CPP campus by students!"
+  },
+  {
+    "objectID": "index test.html#web-site-menu",
+    "href": "index test.html#web-site-menu",
+    "title": "Farm Store and Penguins",
+    "section": "",
+    "text": "use panel-tabset to add multiple tabs to your website.\n\nFruit gift packsRose Wine\n\n\n\n\n\nA sample of gift pack prepared from CPP Grown produce\n\n\n\n\n\n\n\nA sample of wine made from grapes grown right here on campus\n\n\n\n\n\nFor a beautiful graphic of fruit gift pack, see Figure 1."
+  },
+  {
+    "objectID": "index test.html#chossing-data",
+    "href": "index test.html#chossing-data",
+    "title": "Farm Store and Penguins",
+    "section": "2.1 Chossing Data",
+    "text": "2.1 Chossing Data\n\nPenguins are very cute!\n\n… so let’s work with penguin data today.\n\n\n\n\n\n\nNote\n\n\n\nFor this analysis we will use the penguins dataset from the palmerpenguinspackage(Gorman, Williams, and Fraser 2014).\n\n\n\n\n\n\n\n\nExpand to learn more about where the data was collected\n\n\n\n\n\nData were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network."
+  },
+  {
+    "objectID": "index test.html#loading-packages-and-reading-data",
+    "href": "index test.html#loading-packages-and-reading-data",
+    "title": "Farm Store and Penguins",
+    "section": "2.2 Loading packages and reading data",
+    "text": "2.2 Loading packages and reading data\n\n\n\n\n\n\nUsing the data without downloading it\n\n\n\nThis same dataset is also available in the palmerpenguins package\n\n\n\n\nCode\nlibrary(tidyverse)\nlibrary(ggthemes)\nlibrary(palmerpenguins)\nlibrary(gt)"
+  },
+  {
+    "objectID": "index test.html#reading-data",
+    "href": "index test.html#reading-data",
+    "title": "Farm Store and Penguins",
+    "section": "2.3 Reading Data",
+    "text": "2.3 Reading Data\n\n\nCode\nhead(penguins)\n\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "index test.html#cleaning-data",
+    "href": "index test.html#cleaning-data",
+    "title": "Farm Store and Penguins",
+    "section": "2.4 Cleaning Data",
+    "text": "2.4 Cleaning Data\n\n\nCode\nglimpse(penguins)\n\n\nRows: 344\nColumns: 8\n$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…\n$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…\n\n\nCode\npenguins |&gt;\n  drop_na() -&gt; penguins_no_na\n\npenguins_no_na\n\n\n# A tibble: 333 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           36.7          19.3               193        3450\n 5 Adelie  Torgersen           39.3          20.6               190        3650\n 6 Adelie  Torgersen           38.9          17.8               181        3625\n 7 Adelie  Torgersen           39.2          19.6               195        4675\n 8 Adelie  Torgersen           41.1          17.6               182        3200\n 9 Adelie  Torgersen           38.6          21.2               191        3800\n10 Adelie  Torgersen           34.6          21.1               198        4400\n# ℹ 323 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\nWe have removed missing values here, which means that the data has now 333 rows. Note that previously there were 344 rows in the original data.1"
+  },
+  {
+    "objectID": "index test.html#code-annotation",
+    "href": "index test.html#code-annotation",
+    "title": "Farm Store and Penguins",
+    "section": "2.5 Code Annotation",
+    "text": "2.5 Code Annotation\n\n\nCode\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n1penguins |&gt;\n2  mutate(\n    bill_ratio = bill_depth_mm / bill_length_mm,\n    bill_area  = bill_depth_mm * bill_length_mm\n  )\n\n\n\n1\n\nTake penguins, and then,\n\n2\n\nadd new columns for the bill ratio and bill area.\n\n\n\n\n# A tibble: 344 × 10\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 4 more variables: sex &lt;fct&gt;, year &lt;int&gt;, bill_ratio &lt;dbl&gt;, bill_area &lt;dbl&gt;"
+  },
+  {
+    "objectID": "index test.html#footnotes",
+    "href": "index test.html#footnotes",
+    "title": "Farm Store and Penguins",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nNote that this removes any rows with missing values!↩︎"
+  }
+]

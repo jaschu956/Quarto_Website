@@ -1,0 +1,162 @@
+---
+title: "Farm Store and Penguins"
+subtitle: "Get Started with Quarto"
+format: 
+  html: 
+    code-fold: true
+    code-link: true
+    toc: true
+    number-sections: true
+editor: visual
+execute: 
+  echo: true
+bibliography: references.bib
+---
+
+# Farm Store
+
+CPP Farm store has a selected assortment of cool fruits and vegetables right from its on-campus farm.
+
+## Featured Products
+
+Illustration of Multiple columns on a website
+
+::: {layout-ncol="2"}
+![A sample of gift-pack prepared from CPP Grown produce](gift-pack2022.jpg){#fig-gift}
+
+![A sample of wine made from grapes grown right here on campus](2022-hv-zin-rose-755x325.jpg){#fig-wine}
+:::
+
+::: columns
+::: {.column width="50%"}
+Great gift for your loved ones. These fruits were raised by students in agriculture majors on CPP campus, processed and packed by student employees at Farm Store.
+:::
+
+::: {.colum width="50%"}
+Fantastic wine produced right here CPP campus by students!
+:::
+:::
+
+## Web site menu
+
+use `panel-tabset` to add multiple tabs to your website.
+
+::: panel-tabset
+### Fruit gift packs
+
+![A sample of gift pack prepared from CPP Grown produce](gift-pack2022.jpg)
+
+### Rose Wine
+
+![A sample of wine made from grapes grown right here on campus](2022-hv-zin-rose-755x325.jpg)
+:::
+
+For a beautiful graphic of fruit gift pack, see @fig-gift.
+
+# Data Preparation
+
+First, we need to:
+
+1.  load **packages**
+2.  read in **data**
+3.  check if that data is *in the right format*
+
+[By "right format", we mean that the data is tidy, and ready to be summarized and graphed]{.aside}
+
+## Chossing Data
+
+> Penguins are very cute!
+
+... so let's work with penguin data today.
+
+::: callout-note
+For this analysis we will use the `penguins` dataset from the [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)package[@gorman2014].
+:::
+
+::: {.callout-caution collapse="true"}
+### Expand to learn more about where the data was collected
+
+Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network.
+:::
+
+## Loading packages and reading data
+
+::: {.callout-important .smaller}
+### Using the data without downloading it
+
+This same dataset is also available in the `palmerpenguins` package
+:::
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(tidyverse)
+library(ggthemes)
+library(palmerpenguins)
+library(gt)
+
+```
+
+## Reading Data
+
+```{r}
+#| label: head-data
+
+head(penguins)
+```
+
+## Cleaning Data
+
+```{r}
+#| label: glimpse-data
+glimpse(penguins)
+
+penguins |>
+  drop_na() -> penguins_no_na
+
+penguins_no_na
+```
+
+We have removed missing values here, which means that the data has now `r nrow(penguins_no_na)` rows. Note that previously there were `r nrow(penguins)` rows in the original data.[^1]
+
+[^1]: Note that this removes any rows with missing values!
+
+## Code Annotation
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+penguins |>                                        # <1>
+  mutate(                                          # <2>
+    bill_ratio = bill_depth_mm / bill_length_mm,   # <2>
+    bill_area  = bill_depth_mm * bill_length_mm    # <2>
+  )                                                # <2>
+```
+
+1. Take `penguins`, and then,
+2. add new columns for the bill ratio and bill area.
+
+# Charts by Species
+
+The figure below is a bar plot of species of penguins.
+
+
+# References
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
